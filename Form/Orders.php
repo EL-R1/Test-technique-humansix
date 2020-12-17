@@ -59,7 +59,6 @@ $resultats = $r->fetchAll();
 
         <?php
         foreach ($resultats as $ligne) {
-
         ?>
 
         <tr>
