@@ -9,21 +9,21 @@ $db = new PDO("mysql:host=".Config::SERVEUR.";dbname=".Config::BASEDEDONNEES, Co
 var_dump($name);
 var_dump($price);
 
-$r1=$db->prepare("SELECT COUNT(ref) FROM `product`");
+$r1=$db->prepare("SELECT COUNT(sku) FROM `product`");
 $r1->execute();
 //$r->debugDumpParams();
 $resultats=$r1->fetchAll();
 
 
-$id = $resultats[0]["COUNT(ref)"] + 1;
+$id = $resultats[0]["COUNT(sku)"] + 1;
 $string_resultats = strval($id);
-$ref =  "ref".$string_resultats;
+$sku =  "sku".$string_resultats;
 
 
 //je prépare ma requete sql
-$r=$db->prepare("insert into product (ref,name, price) values (:ref, :name, :price) ");
+$r=$db->prepare("insert into product (sku,name, price) values (:sku, :name, :price) ");
 
-$r->bindParam(":ref", $ref);
+$r->bindParam(":sku", $sku);
 $r->bindParam(":name", $name);
 $r->bindParam(":price", $price);
 

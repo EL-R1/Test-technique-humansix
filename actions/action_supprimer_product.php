@@ -1,13 +1,13 @@
 <?php
 include_once "../Mise_en_page/header.php";
-$ref_product=filter_input(INPUT_POST, "ref");
+$sku_product=filter_input(INPUT_POST, "sku");
 var_dump($_POST);
 
 
 $db = new PDO("mysql:host=".Config::SERVEUR.";dbname=".Config::BASEDEDONNEES, Config::UTILISATEUR, Config::MOTDEPASSE);
 
-$r=$db->prepare("delete p from product p where p.ref=:ref_product");
-$r->bindParam(":ref_product",$ref_product);
+$r=$db->prepare("delete p from product p where p.sku=:sku_product");
+$r->bindParam(":sku_product",$sku_product);
 $r->execute();
 $r->debugDumpParams();
 

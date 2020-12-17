@@ -44,21 +44,21 @@ foreach ($xml->children() as $row){
         $product = $cart_row->product;
 
         foreach ($product as $list_product){
-            $ref = $list_product[0]->attributes();
+            $sku = $list_product[0]->attributes();
             $name = $list_product->name;
             $quantity = $list_product->quantity;
             $price = $list_product->price;
 
-            $r2 = $db->prepare("INSERT INTO `product`(ref,name,price) values (:ref, :name, :price)");
-            $r2->bindParam(":ref", $ref);
+            $r2 = $db->prepare("INSERT INTO `product`(sku,name,price) values (:sku, :name, :price)");
+            $r2->bindParam(":sku", $sku);
             $r2->bindParam(":name", $name);
             $r2->bindParam(":price", $price);
             $r2->execute();
 
-            $r4 = $db->prepare("INSERT INTO `cart`(quantity, id_order,ref_product) values (:quantity, :id_order, :ref_product)");
+            $r4 = $db->prepare("INSERT INTO `cart`(quantity, id_order,sku_product) values (:quantity, :id_order, :sku_product)");
             $r4->bindParam(":quantity", $quantity);
             $r4->bindParam(":id_order", $id_order);
-            $r4->bindParam(":ref_product", $ref);
+            $r4->bindParam(":sku_product", $sku);
             $r4->execute();
 
         }

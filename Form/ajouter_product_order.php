@@ -41,7 +41,7 @@ $resultats = $r->fetchAll();
 
                         foreach ($resultats1 as $ligne) {
                             ?>
-                            <option value="<?php echo $ligne['ref'] ?>"><?php echo $ligne['name'] ?></option>
+                            <option value="<?php echo $ligne['sku'] ?>"><?php echo $ligne['name'] ?></option>
                             <?php
                         }
                         ?>
@@ -80,7 +80,7 @@ $resultats = $r->fetchAll();
             <?php
 
             $db = new PDO("mysql:host=" . Config::SERVEUR . ";dbname=" . Config::BASEDEDONNEES, Config::UTILISATEUR, Config::MOTDEPASSE);
-            $r = $db->prepare("SELECT * FROM `cart` c JOIN product p on p.ref=c.ref_product WHERE id_order= :id");
+            $r = $db->prepare("SELECT * FROM `cart` c JOIN product p on p.sku=c.sku_product WHERE id_order= :id");
             $r->bindParam(":id", $id_order);
             $r->execute();
             //$r->debugDumpParams();

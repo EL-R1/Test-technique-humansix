@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE IF NOT EXISTS `cart` (
   `quantity` int(11) NOT NULL DEFAULT '1',
-  `ref_product` varchar(50) NOT NULL,
+  `sku_product` varchar(50) NOT NULL,
   `id_order` int(11) NOT NULL,
-  KEY `ref_product` (`ref_product`),
+  KEY `sku_product` (`sku_product`),
   KEY `id_order` (`id_order`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -75,10 +75,10 @@ CREATE TABLE IF NOT EXISTS `order` (
 
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
-  `ref` varchar(50) NOT NULL,
+  `sku` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
   `price` float NOT NULL,
-  PRIMARY KEY (`ref`)
+  PRIMARY KEY (`sku`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -111,7 +111,7 @@ INSERT INTO `utilisateur` (`id`, `login`, `mot_de_passe`) VALUES
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_to_order` FOREIGN KEY (`id_order`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `cart_to_product` FOREIGN KEY (`ref_product`) REFERENCES `product` (`ref`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `cart_to_product` FOREIGN KEY (`sku_product`) REFERENCES `product` (`sku`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `order`
