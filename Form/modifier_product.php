@@ -3,12 +3,12 @@ include_once  "../Mise_en_page/header.php";
 include_once  "../Mise_en_page/footer.php";
 mon_header("Modifier Produit");
 
-$ref=filter_input(INPUT_GET, "ref");
+$sku=filter_input(INPUT_GET, "sku");
 ;
 $db = new PDO("mysql:host=".Config::SERVEUR.";dbname=".Config::BASEDEDONNEES, Config::UTILISATEUR, Config::MOTDEPASSE);
 
-$r=$db->prepare("select * from product where ref=:ref ");
-$r->bindParam(":ref",$ref);
+$r=$db->prepare("select * from product where sku=:sku ");
+$r->bindParam(":sku",$sku);
 $r->execute();
 
 //$r->debugDumpParams();
@@ -20,7 +20,7 @@ $lignes=$r->fetchAll();
 <h2>Modifier un Produit</h2>
 
 <form method="post" action="../actions/actions_modif_product.php">
-    <input type="hidden" name="ref" value="<?php echo $ref ?>">
+    <input type="hidden" name="sku" value="<?php echo $sku ?>">
     <div class="form-group">
         <label for="Nom">Nom</label>
         <input type="text" class="form-control" maxlength="150"
