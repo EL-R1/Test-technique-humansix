@@ -52,6 +52,9 @@ $resultats = $r->fetchAll();
                     <button class="btn btn-link" type="submit">Prix </button>
                 </form>
             </th>
+            <td>
+                <span class="btn btn-link">Propriétaire de la commande </span>
+            </td>
         </tr>
 
         <?php
@@ -64,19 +67,19 @@ $resultats = $r->fetchAll();
             <td><?php echo $ligne["orderDate"]?></td>
             <td><?php echo $ligne["status"]?></td>
             <td><?php echo $ligne["price"]?> €</td>
+            <td><?php echo $ligne["firstname"], " ", $ligne["lastname"] ?></td>
             <td>
+                <form method="post" action="../Form/ajouter_product_order.php">
+                    <input type="hidden" name="id_customer" value="<?php echo $ligne["id_customer"]?>">
+                    <input type="hidden" name="id_order" value="<?php echo $ligne["id_order"] ?>">
+                    <button class="btn btn-warning"><i
+                                class="fa fa-edit"></i>Détails</button>
+                </form>
                 <?php if ($ligne["status"] == "processing" ){ ?>
-                    <form method="post" action="../Form/ajouter_product_order.php">
-                        <input type="hidden" name="id_customer" value="<?php echo $ligne["id_customer"]?>">
-                        <input type="hidden" name="id_order" value="<?php echo $ligne["id_order"] ?>">
-                        <button class="btn btn-success"><i
-                                    class="fa fa-edit"></i> Continuer la commande</button>
-                    </form>
-                <?php } if ($ligne["status"] != "canceled" ){ ?>
                     <form method="post" action="../actions/actions_ajout_order.php">
                         <input type="hidden" name="canceled" value="canceled">
                         <input type="hidden" name="id_order" value="<?php echo $ligne["id_order"] ?>">
-                        <button class="btn btn-danger"><i
+                        <button class="btn btn-dark"><i
                                     class="fa fa-close"></i> Annuler la commande</button>
                     </form>
                 <?php }?>

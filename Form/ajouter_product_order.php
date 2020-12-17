@@ -20,10 +20,9 @@ $r->execute();
 $resultats = $r->fetchAll();
 ?>
 
-
-
-
     <div class="row">
+<?php  if($resultats[0]["status"] != "canceled"){
+?>
         <div class="col-md-4">
             <h2>Ajouter des produits dans la commande n°<?php echo $id_order ?> </h2>
             <h3>Fait par : <?php echo $resultats[0]["firstname"], " ", $resultats[0]["lastname"] ?></h3>
@@ -71,6 +70,7 @@ $resultats = $r->fetchAll();
 
 
         </div>
+        <?php } ?>
         <div class="col-md-4"></div>
 
 
@@ -119,5 +119,16 @@ $resultats = $r->fetchAll();
 
 
 <?php
+if($resultats[0]["status"] == "canceled"){
+?>
+    <a href="Orders.php" class="btn btn-danger">
+        <i class="fal fa-backward"></i>
+        Retour
+    </a>
+<?php
+
+}
+
+
 mon_footer();
 ?>

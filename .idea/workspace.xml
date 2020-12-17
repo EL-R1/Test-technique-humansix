@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7f6882-3bff-4211-8e44-4a5795e11602" name="Default Changelist" comment="" />
+    <list default="true" id="0a7f6882-3bff-4211-8e44-4a5795e11602" name="Default Changelist" comment="Partie 1 et 2 du test technique">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/Customer_Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Customer_Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/ajouter_product_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/Form/ajouter_product_order.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,12 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1li1DBsVEdUhE6FavWfLJplhdi1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/actions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -52,12 +61,24 @@
       <workItem from="1608077547900" duration="3660000" />
       <workItem from="1608102117756" duration="33379000" />
       <workItem from="1608139607521" duration="583000" />
-      <workItem from="1608232563682" duration="734000" />
+      <workItem from="1608232563682" duration="2744000" />
     </task>
+    <task id="LOCAL-00001" summary="Partie 1 et 2 du test technique">
+      <created>1608233378528</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608233378528</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Partie 1 et 2 du test technique" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partie 1 et 2 du test technique" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
