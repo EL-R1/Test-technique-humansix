@@ -1,7 +1,6 @@
 <?php
 include_once "../Mise_en_page/header.php";
 
-require_once "../config.php";
 
 $utilisateur=filter_input(INPUT_POST, "email");
 $mot_de_passe=filter_input(INPUT_POST, "mot_de_passe");

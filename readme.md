@@ -1,41 +1,50 @@
 # Test technique humansix
 
-Le but de ce test est de mesurer le niveau technique du candidat et la façon de résoudre une problématique. Cela permet aussi de comprendre l'affinité d'un candidat avec le backend ou le frontend.
+Pour ce test j'ai décidé de faire le backend et le frontend en php.
 
-Le backend doit se faire via du php ou un CMS php de votre choix.
+Pour installer mon projet il faut importer ma base de données "orders" se trouvant dans le dossier "config".
 
-Le frontend peut se faire librement (html5, jquery, react, vuejs, template, ...).
-
-Vous êtes libre dans le choix de la base de données.
-
-Vous devrez indiquer comment installer votre projet (installation manuelle, docker, vagrant, etc).
+Ensuite vous pouvez rentrer le nom, mot de passe de votre utilisateur de votre base de données dans le fichier config.php,
+se trouvant dans le dossier "config".
 
 ## Step 1 - Mise en place d'une base
 
-Vous devez analyser le xml orders.xml afin de créer les tables correspondantes, puis créer un script afin d'y injecter les données du xml.
+Lors de la connexion avec les identifiants : 
+
+- Login : admin
+- Pass : S3cr3T+
+
+Vous arrivez sur la page des consommateurs et il y a un bouton avec écrit "implémenter" dessus, 
+en cliquant sur ce dernier vous executerez le script qui permet d'importer le script dans la base de données.
 
 ## Step 2 - Mise en place d'un front
 
-Vous devez créer une page de connexion avec comme utilisateur :
+La page de connexion vous a été présenter juste avant.
 
- - Login : admin
- - Pass : S3cr3T+
+Une fois que vous êtes connecté vous pouvez vous déconnecter en cliquant 
+sur le bouton "Home" de la barre de navigation.
 
-Une fois l'utilisateur connecté, vous devez afficher une page de résultats contenant les commandes qui sont en base de données.
+Attention : Si vous êtes déconnecté il est impossible d'aller sur les pages du projet. (sauf pour l'api)
 
-Ces résultats doivent être triables au moins par date.
+En étant connecté vous verrez la listes des consommateurs, vous pourrez voir aussi la liste des produits
+et la liste des commandes. 
 
-Il faut ensuite créer un formulaire pour créer une nouvelle commande avec les produits existants en base.
+Vous pourrez modifier, supprimer un utilisateur ou un produit ce qui supprimera toutes les commandes
+auxquels ils appartiennent. 
+
+En continuant n'importe quelle commande vous avez un aperçu des produits dans cette dernière ainsi que son prix total.
+
+Dans la liste des commandes en cliquant sur les titres de la table ça triera les commandes.
+
+Enfin dans la listes des commandes vous pouvez annuler une commande ou en créer une nouvelle en choisissant son consommateur.
 
 ## Step 3 - Mise en place d'une micro API (optionnel)
 
-Vous devez créer une micro API REST (en accès publique) qui permet de récupérer en GET les commandes et les produits.
+Pour de ce qui est de l'api j'ai créée un dossier "api" dans ce projet et vous pourrez accéder à ses données via un navigateur ou un logiciel tiers comme Postman par exemple.
 
-La réponse doit être en JSON.
+Voici la liste des appels que j'ai effectué :
 
-Exemples d'appels API souhaités :
-
- - http://localhost/api/orders : afficher toutes les commandes
- - http://localhost/api/order/{id} : afficher une commande en fonction de son id
- - http://localhost/api/products : afficher toutes les commandes
- - http://localhost/api/product/{sku} : afficher un produit en fonction de son sku
+- http://localhost/api/orders.php : afficher toutes les commandes
+- http://localhost/api/order.php?id= : afficher une commande en fonction de son id
+- http://localhost/api/products.php : afficher toutes les commandes
+- http://localhost/api/products.php?sku= : afficher un produit en fonction de son sku

@@ -3,7 +3,10 @@ include_once  "../Mise_en_page/header.php";
 include_once  "../Mise_en_page/footer.php";
 session_unset();
 mon_header_login("Index");
+
+
 ?>
+
 
 <div class="row">
     <div class="col-sm-4"></div>
